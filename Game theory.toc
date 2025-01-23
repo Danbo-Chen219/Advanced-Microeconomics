@@ -1,0 +1,4 @@
+\contentsline {section}{\numberline {1}Static Games}{1}{}%
+\contentsline {subsection}{\numberline {1.1}Case 1: Betrend Competition}{1}{}%
+\contentsline {subsection}{\numberline {1.2}Mon, Sept 9: Review of Newtonian Mechanics}{3}{}%
+\contentsline {subsection}{\numberline {1.3}Tue, Sept 10: Alternative Formulations of Newtonian Mechanics}{4}{}%
