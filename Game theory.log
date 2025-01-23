@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.11.29)  23 JAN 2025 13:58
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.11.29)  23 JAN 2025 14:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -458,20 +458,20 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [2]
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 161.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 165.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 161.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 165.
 
 [3] [4] (./Game theory.aux) ) 
 Here is how much of TeX's memory you used:
  13759 strings out of 476179
  276872 string characters out of 5809543
- 555556 words of memory out of 5000000
+ 556556 words of memory out of 5000000
  34231 multiletter control sequences out of 15000+600000
  481863 words of font info for 87 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 84i,6n,89p,476b,240s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,6n,89p,476b,219s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on Game theory.pdf (4 pages).
