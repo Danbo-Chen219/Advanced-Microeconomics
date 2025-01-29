@@ -1,11 +1,14 @@
 \documentclass[12pt, oneside]{article} 
-\usepackage{amsmath, amsthm, amssymb, calrsfs, wasysym, verbatim, bbm, color, graphics, geometry}
+\usepackage{amsmath, amsthm, amssymb, calrsfs, wasysym, verbatim, bbm, color, graphics, geometry, multirow}
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{setspace}
+\usepackage{tikz}
+\usetikzlibrary{trees, positioning}
+\usepackage{pgfplots}
 \renewcommand{\baselinestretch}{1.5}
 \geometry{tmargin=.75in, bmargin=.75in, lmargin=.75in, rmargin = .75in}  
 
@@ -15,6 +18,7 @@
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\Cdot}{\boldsymbol{\cdot}}
+
 
 \newtheorem{thm}{Theorem}
 \newtheorem{defn}{Definition}
@@ -136,7 +140,7 @@ Naturally, depending on what firm 2's price is, we could have any of these situa
 \end{itemize}
 
 \begin{itemize}
-    \item Lastly, suppose firm 2’s price were at or below marginal cost, $p_2 \leq c$.
+    \item Lastly, suppose firm 2's price were at or below marginal cost, $p_2 \leq c$.
     \begin{itemize}
         \item If firm 1 chose a price above this, firm 2 would get all of the consumers since their price is lower.
         \item If firm 1 matched this price, they would get half of the consumers.
@@ -180,76 +184,225 @@ Naturally, depending on what firm 2's price is, we could have any of these situa
 \subsection{Case 2: Cournet Competition}
 
 \subsection{Case 3: Stackelberg Competition}
+\newpage
+\section{Nash Equilibria in Mixed Actions}
 
-\section{Topic 2: Nash Equilibria in Mixed Actions}
+\section{Incomplete Information Static Games}
 
-% \subsection{Exponential Distribution}
+\subsection{Incomplete Information}
+A game has (is of) incomplete information when at least one player does not know the payoff that some player receives from some strategy profile (or terminal nodes).
 
-% \subsection{Poisson Distribution}
+In this section, we will consider simultaneously-move games with incomplete information.
 
-% \begin{itemize}
+As an example, consider the following game. This is a modified Prisoner’s dilemma. Prisoner 1 is not clear about the crime she committed so she doesn’t know which of the following games is played.
 
-% \item Newtonian mechanics (i.e., ${\bf F} = m{\bf a}$) is an excellent theory; it applies to the vast majority of human-scale (and even interplanetary-scale) physics. 
+Prisoner 2, on the other, has more knowledge about law so he knows which game is played.
 
-% \item Apart from relativistic effects at very high velocities (special relativity) or in very strong gravitational fields (general relativity), Newtonian mechanics accurately describes a huge range of phenomena, but around the end of the Nineteenth Century people became aware of some physical effects for which there is no sensible Newtonian explanation.
+\begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \setlength{\tabcolsep}{8pt}
+    \begin{tabular}{c c|c c|}
+        \multicolumn{2}{c}{} & \multicolumn{2}{c}{\textbf{Prisoner 2}} \\
+        \multicolumn{2}{c}{} & Defense & Confess \\
+        \cline{2-4}
+        \multirow{2}{*}{\textbf{Prisoner 1}} & Defense & -2,-2 & -10,-1 \\
+        & Confess & -1,-10 & -5,-5 \\
+        \cline{2-4}
+        \multicolumn{4}{c}{Good}
+    \end{tabular}
+    \hspace{1cm}
+    \begin{tabular}{c c|c c|}
+        \multicolumn{2}{c}{} & \multicolumn{2}{c}{\textbf{Prisoner 2}} \\
+        \multicolumn{2}{c}{} & Defense & Confess \\
+        \cline{2-4}
+        \multirow{2}{*}{\textbf{Prisoner 1}} & Defense & -5,-5 & -13,-4 \\
+        & Confess & -4,-13 & -8,-8 \\
+        \cline{2-4}
+        \multicolumn{4}{c}{Bad}
+    \end{tabular}
+\end{table}
+\break
+Let's use a game tree to represent this. In the eyes of Prisoner 1, this game is like this:
 
-% \item Examples include:
-% \begin{itemize}
-% \item the {\bf double slit experiment} (done with light by Thomas Young in 1801, and with electrons by Tonomura in 1986)
-% \item the photoelectric effect (analyzed by Einstein in 1905 --- in fact his Nobel-winning work)
-% \item the ``quantum Venn diagram'' puzzle, involving the overlaps of three polarizing filters
-% \item the stability of the hydrogen atom (i.e., the fact that the electron doesn't lose energy and spiral inward toward the proton).
-% \end{itemize}
+\begin{center}
+\begin{tikzpicture}[scale=1.1, transform shape]
+    \tikzstyle{level 1}=[sibling distance=60mm]
+    \tikzstyle{level 2}=[sibling distance=30mm]
+    
+    \node {Prisoner 1}
+        child { node {Prisoner 2}
+            child { node { (?,?) } edge from parent node[left] {Defense} }
+            child { node { (?,?) } edge from parent node[right] {Confess} }
+            edge from parent node[left] {Defense}
+        }
+        child { node {Prisoner 2}
+            child { node { (?,?) } edge from parent node[left] {Defense} }
+            child { node { (?,?) } edge from parent node[right] {Confess} }
+            edge from parent node[right] {Confess}
+        };
+    
+    % Drawing the information set
+    \draw[dashed] (-1.8,-1.5) -- (1.8,-1.5) node[midway, above] {An Information Set};
+\end{tikzpicture}
+\end{center}
 
-% \begin{rem}
-% How now, brown cow?
-% \end{rem}
+\subsection{Types and strategies}
+Dealing with games with incomplete information is difficult. But Harsany came up with a solution to address this problem. His idea is to transform any game of incomplete information into a game with complete but imperfect information.
 
-% \begin{defn}
-% The {\em Feynman kernel} is given by
-% \[ K(x_b, t_b; x_a, t_a) = \int_{x(t_a) = x_a}^{x(t_b) = x_b} e^{(i/\hbar) S[x(t)]} \; \mathcal{D}x(t). \]
-% \end{defn}
+When doing so, we suppose the nature randomly chooses a “type” for each player. Each player knows only her own type, but not other players' type. The types of all players influence the payoff of each player.
 
-% \end{itemize}
+For example, after introducing the nature and type, then we can say Prison 2 has 2 types: Good or Bad. Prisoner 2's type not only influences his own payoff, it also influences the payoff of Prisoner 1.
+The game tree now looks like the following.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Figure/incom_tree.png} 
+    \caption{Incomplete Information Game Tree} 
+    \label{fig:2} 
+\end{figure}
 
-\subsection{Mon, Sept 9: Review of Newtonian Mechanics}
+\break
+Prisoner 1 cannot distinguish the two decision nodes because she cannot observe the type of Prisoner 2.
+Prisoner 2 has 2 types, and he can observe his own type, so he has 2 information sets.
 
-\begin{itemize}
+We can still define a strategy as a function that maps an information set to a distribution over actions.
+Now an information set just represents a type of a player. Here, Prisoner 1 has only one type, so she has only one information set.
 
-\item  A {\em Newtonian trajectory} ${\bf x}(t)$ ($t \in \R$) is given by solutions of the second order ODE
-\[ m\, \ddot{{\bf x}}(t) = {\bf F}({\bf x}(t)), \]
-where $m > 0$ is a basic parameter associated with a given Newtonian particle, called its {\em mass}.
+Thus, we can also define a strategy as a function from a type to a distribution over action.
 
-\item The force field ${\bf F}({\bf x})$ --- which we take to be static (i.e., not intrinsically dependent on time) for simplicity --- is said to be {\em conservative} if there is a {\em potential function} $V({\bf x})$ such that
-\[ {\bf F}({\bf x}) = -\nabla V({\bf x}). \]
-Here, `$\nabla$' denotes the {\em gradient operator}, 
-\[ \nabla V = \bigg( \frac{\partial V}{\partial x}, \, \frac{\partial V}{\partial y}, \, \frac{\partial V}{\partial z} \bigg). \]
+More formally, a static game of incomplete information can be described by:
+\[
+\Gamma_N = [I, \{\Delta(A_i)\}_{i \in I}, \{u_i(\cdot)\}_{i \in I}, \{\Theta_i\}_{i \in I}]
+\]
+such that:
 
-\item For a conservative force field, we can find a {\em conserved quantity} along the Newtonian trajectories, namely the {\em total mechanical energy}.
-\[ E = H({\bf x}, {\bf p}) := \frac{1}{2m}\, {\bf p}^2 + V({\bf x}). \]
-Here, ${\bf p}^2 := {\bf p} \Cdot {\bf p} = \| {\bf p} \|^2$, and ${\bf p} := m {\bf v} := m \dot{{\bf x}}$ is the {\em momentum}.
+\begin{enumerate}
+    \item \( I \): a set of players. We assume there are \( n \) players.
+    \item \( \Delta(A_i) \): the set of mixed action of player \( i \).
+    \item \( \Theta_i \): a set of types of player \( i \). We define \( \Theta = \Theta_1 \times \Theta_2 \times \cdots \times \Theta_n \) and \( (\theta_i, \theta_{-i}) \) to define a type profile, where \( \theta_{-i} = (\theta_j)_{j \neq i} \).
+    \item \( u_i : \prod_{j=1}^{n} \Delta(A_i) \times \prod_{j=1}^{n} \Theta_j \to \mathbb{R} \): the utility function of player \( i \), which depends on the action profile and players’ types. We use \( u_i(\alpha_1, \alpha_2, \dots, \alpha_n, \theta_1, \theta_2, \dots, \theta_n) \) to denote the expected payoff of player \( i \) when the action profile is \( (\alpha_1, \alpha_2, \dots, \alpha_n) \) and the type profile is \( (\theta_1, \theta_2, \dots, \theta_n) \).
+\end{enumerate}
 
-\end{itemize}
+In the above example, \( I = \{1,2\} \), \( A_i = \{D,C\} \), \( \Theta_1 = \{\emptyset\} \) and \( \Theta_2 = \{G, B\} \). The utility function of P1 is such that \( u_1(D, D, \emptyset, G) = -2 \) and so on.
 
-\subsection{Tue, Sept 10: Alternative Formulations of Newtonian Mechanics}
+A pure strategy of player \( i \) is a function \( s_i : \Theta_i \to A_i \) such that \( s_i(\theta) \) is the action chosen by player \( i \) of type \( \theta \in \Theta_i \).
 
-\begin{itemize}
+A mixed strategy of player \( i \) is a function \( \sigma_i : \Theta_i \to \Delta(A_i) \) such that \( \sigma_i(a | \theta) \) is the probability that action \( a \in A_i \) is chosen by player \( i \) of type \( \theta \in \Theta_i \). If \( A_i \) has \( m \) elements, we can also use \( \sigma_i(\theta) = (p_1, p_2, \dots, p_m) \) to represent a strategy of player \( i \) of type \( \theta \).
 
-\item The {\bf Hamiltonian formulation}:
-\[ \dot{{\bf x}} = \frac{\partial H}{\partial {\bf p}}, \;\;\;\;\; \dot{{\bf p}} = - \frac{\partial H}{\partial {\bf x}}. \]
+So for Player 1, \( s_1(\emptyset) = D \) is a pure strategy. For Player 2, \( \sigma_2(G) = \left( \frac{1}{2}, \frac{1}{2} \right) \) and \( \sigma_2(B) = (1,0) \) is a mixed strategy.
 
-\item The {\bf Lagrangian formulation}:
-\[ \delta S[{\bf x}(t)] = 0, \]
-where the {\em action} on the time interval $[t_a, t_b]$ is given by
-\[ S[{\bf x}(t)] := \int_{t_a}^{t_b} \bigg[ \frac{m}{2} \, \dot{{\bf x}}(t)^2 - V({\bf x}(t)) \bigg]  \; dt. \]
+\subsection{Dominant and Dominated Strategies}
+The idea of dominant and dominated strategies can be extended to an incomplete information game. We give the following definitions.
 
-\item Etc.
+\textbf{Definition 1.} In an incomplete information game 
+\[
+\Gamma_N = [I, \{\Delta(A_i)\}_{i\in I}, \{u_i(\cdot)\}_{i\in I}, \{\Theta_i\}_{i\in I}],
+\]
+a strategy \(\sigma_i\) is said to strictly dominate \(\sigma'_i\) if for all \((\theta_i, \theta_{-i}) \in \Theta\) and all \(a_{-i} \in \prod_{j \neq i} A_j\),
+\[
+u_i(\sigma_i(\theta_i), a_{-i}, \theta_i, \theta_{-i}) > u_i(\sigma'_i(\theta_i), a_{-i}, \theta_i, \theta_{-i}).
+\]
+The strategy \(\sigma_i\) is strictly dominant if it strictly dominates every other strategy \(\alpha'_i\).
 
-\end{itemize}
+\vspace{0.5cm}
+
+A strategy profile \((\sigma_1, \sigma_2, \dots, \sigma_n)\) is a strictly dominant strategy equilibrium if \(\sigma_i\) is a strictly dominant strategy for all \(i\).
+
+In the previous example, regardless of the type of Player 2, for both players, Confess is a strictly dominant strategy so we can predict that both players of any type choose Confess.
+
+The above condition is too strong. We also state a weaker one as below.
+
+\vspace{0.5cm}
+
+\textbf{Definition 2.} In an incomplete information game \[
+\Gamma_N = [I, \{\Delta(A_i)\}_{i\in I}, \{u_i(\cdot)\}_{i\in I}, \{\Theta_i\}_{i\in I}],
+\]
+a strategy \(\sigma_i\) is said to weakly dominate \(\sigma'_i\) if for all \((\theta_1, \theta_2, \dots, \theta_n) \in \Theta\) and all \(a_{-i} \in \prod_{j \neq i} A_j\),
+\[
+u_i(\sigma_i(\theta_i), a_{-i}, \theta_i, \theta_{-i}) \geq u_i(\sigma'_i(\theta_i), a_{-i}, \theta_i, \theta_{-i})
+\]
+with strictly inequality for some \(a_{-i}\) and \((\theta_i, \theta_{-i})\).
+
+The strategy \(\sigma_i\) is weakly dominant if it weakly dominates every other strategy \(\alpha'_i\).
+
+A strategy profile \((\sigma_1, \sigma_2, \dots, \sigma_n)\) is a weakly dominant strategy equilibrium if \(\sigma_i\) is a weakly dominant strategy for all \(i\).
+
+\subsection{Beliefs and Bayesian Games}
+Now we change the payoff in the previous example a little bit. We still assume Player 1 does not know which game is played and thus is of one type, while Player 2 knows which game is played and has 2 types.
+
+\begin{table}[h]
+    \renewcommand{\arraystretch}{1.2}
+    \setlength{\tabcolsep}{8pt}
+    \begin{tabular}{c c|c c|}
+        \multicolumn{2}{c}{} & \multicolumn{2}{c}{\textbf{Prisoner 2}} \\
+        \multicolumn{2}{c}{} & Defense & Confess \\
+        \cline{2-4}
+        \multirow{2}{*}{\textbf{Prisoner 1}} & Defense & -2,-2 & -10,-1 \\
+        & Confess & -1,-10 & -5,-5 \\
+        \cline{2-4}
+        \multicolumn{4}{c}{Good}
+    \end{tabular}
+    \hspace{1cm}
+    \begin{tabular}{c c|c c|}
+        \multicolumn{2}{c}{} & \multicolumn{2}{c}{\textbf{Prisoner 2}} \\
+        \multicolumn{2}{c}{} & Defense & Confess \\
+        \cline{2-4}
+        \multirow{2}{*}{\textbf{Prisoner 1}} & Defense & -4,-5 & -8,-4 \\
+        & Confess & -5,-13 & -13,-8 \\
+        \cline{2-4}
+        \multicolumn{4}{c}{Bad}
+    \end{tabular}
+\end{table}
+
+Prisoner 1 has no dominant strategy now. If Prisoner 2's type is Good, it is optimal for Player 1 to choose Confess. If his type is Bad, it is optimal to choose Defense.
+
+We want to have an incomplete information game version of Nash equilibrium, which we can guarantee its existence and it is an extension of the previous concepts. To do so, we will have to specify how Prisoner 1 thinks of Prisoner 2's type. Or how Prisoner 1 assigns probabilities to the two decision nodes in her information set. We introduce the following concept.
+
+\textbf{Definition 3.} In an extensive form game \( \Gamma_E \), a belief system \( \mu : N \to [0,1] \) assigns probability to each decision node such that for any information set \( h \in H \),
+\[
+\sum_{x \in h} \mu(x) = 1
+\]
+
+In our example, we need to specify \( \mu(x_1) \) and \( \mu(x_2) \), the probabilities that Prisoner 1 assigns to the 2 decision nodes in her information set.
+
+\includegraphics{Figure/incom_tree_bey.png}
+
+To specify the beliefs of players, we usually assume the incomplete information games we consider are Bayesian games. In addition to what constitutes an incomplete information game, in a Bayesian game, nature assigns probabilities to type profiles of the players.
+
+A Bayesian game is an incomplete information game with a probability distribution \( p \) over type profiles \( \Theta = \Theta_1 \times \Theta_2 \times \cdots \times \Theta_n \). We assume this distribution \( p \) is a common knowledge.
+
+When each player has finite types, we use a probability mass function \( p \) such that \( p(\theta_1, \theta_2, \dots, \theta_n) \) is the probability the nature assigns to type profile \( (\theta_1, \theta_2, \dots, \theta_n) \). When types are real numbers, \( p \) is the probability density function.
+
+We use 
+\[
+\Gamma_N = [I, \{\Delta(A_i)\}_{i\in I}, \{u_i(\cdot)\}_{i\in I}, \{\Theta_i\}_{i\in I}, p(\cdot)]
+\]
+to represent a Bayesian game.
+
+In the previous example, we can assume the nature assigns probability \( p(\emptyset, G) \) to type profile \( (\emptyset, G) \), and assigns probability \( p(\emptyset, B) \) to type profile \( (\emptyset, B) \). The game tree thus looks like the following.
 
 
+\includegraphics{Figure/incom_tree_bey2.png}
+\textit{p} is called the prior belief in the sense that players know this even without knowing their own types. But after observing \( \theta_i \), player \( i \) will update her belief using Bayes rule. She will assign belief to \( (\theta_i, \theta_{-i}) \) conditional on \( \theta_i \). In notation, that is
 
+\[
+p(\theta_i, \theta_{-i} | \theta_i) = \frac{p(\theta_i, \theta_{-i})}{\sum_{\theta'_{-i}} p(\theta_i, \theta'_{-i})}
+\]
 
+This is called the posterior belief of player \( i \) of type \( \theta_i \).
 
+Now we update the belief of Prisoner 1. This is trivial because Prisoner 1 has only one type.
+
+\[
+p(\emptyset, B | \emptyset) = \frac{p(\emptyset, B)}{p(\emptyset, B) + p(\emptyset, G)} = p(\emptyset, B)
+\]
+
+This is the probability that Prisoner 1 assigns to \( x_2 \) in her information set.
+
+\[
+\mu(x_2) = p(\emptyset, B)
+\]
+
+We call \( p(\cdot) \) the prior belief, which is the belief of a player when she has not observed her type yet. We call \( p(\cdot | \theta_i) \) the posterior belief of player \( i \), which is the belief of her after she observed her type.
 
 \end{document}

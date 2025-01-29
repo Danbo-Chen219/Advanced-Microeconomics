@@ -2,8 +2,11 @@
 \contentsline {subsection}{\numberline {1.1}Key points}{2}{}%
 \contentsline {section}{\numberline {2}Static Games}{3}{}%
 \contentsline {subsection}{\numberline {2.1}Case 1: Betrend Competition}{3}{}%
-\contentsline {subsection}{\numberline {2.2}Case 2: Cournet Competition}{6}{}%
-\contentsline {subsection}{\numberline {2.3}Case 3: Stackelberg Competition}{6}{}%
-\contentsline {section}{\numberline {3}Topic 2: Nash Equilibria in Mixed Actions}{6}{}%
-\contentsline {subsection}{\numberline {3.1}Mon, Sept 9: Review of Newtonian Mechanics}{6}{}%
-\contentsline {subsection}{\numberline {3.2}Tue, Sept 10: Alternative Formulations of Newtonian Mechanics}{6}{}%
+\contentsline {subsection}{\numberline {2.2}Case 2: Cournet Competition}{5}{}%
+\contentsline {subsection}{\numberline {2.3}Case 3: Stackelberg Competition}{5}{}%
+\contentsline {section}{\numberline {3}Nash Equilibria in Mixed Actions}{6}{}%
+\contentsline {section}{\numberline {4}Incomplete Information Static Games}{6}{}%
+\contentsline {subsection}{\numberline {4.1}Incomplete Information}{6}{}%
+\contentsline {subsection}{\numberline {4.2}Types and strategies}{7}{}%
+\contentsline {subsection}{\numberline {4.3}Dominant and Dominated Strategies}{9}{}%
+\contentsline {subsection}{\numberline {4.4}Beliefs and Bayesian Games}{10}{}%
