@@ -1,12 +1,19 @@
 \contentsline {section}{\numberline {1}Nash Equilibrium in Pure Actions}{1}{}%
 \contentsline {subsection}{\numberline {1.1}Key points}{2}{}%
-\contentsline {section}{\numberline {2}Static Games}{3}{}%
-\contentsline {subsection}{\numberline {2.1}Case 1: Betrend Competition}{3}{}%
-\contentsline {subsection}{\numberline {2.2}Case 2: Cournet Competition}{5}{}%
-\contentsline {subsection}{\numberline {2.3}Case 3: Stackelberg Competition}{5}{}%
-\contentsline {section}{\numberline {3}Nash Equilibria in Mixed Actions}{6}{}%
-\contentsline {section}{\numberline {4}Incomplete Information Static Games}{6}{}%
-\contentsline {subsection}{\numberline {4.1}Incomplete Information}{6}{}%
-\contentsline {subsection}{\numberline {4.2}Types and strategies}{7}{}%
-\contentsline {subsection}{\numberline {4.3}Dominant and Dominated Strategies}{9}{}%
-\contentsline {subsection}{\numberline {4.4}Beliefs and Bayesian Games}{10}{}%
+\contentsline {section}{\numberline {2}Static Games}{2}{}%
+\contentsline {subsection}{\numberline {2.1}Case 1: Betrend Competition}{2}{}%
+\contentsline {subsection}{\numberline {2.2}Case 2: Cournet Competition}{4}{}%
+\contentsline {subsection}{\numberline {2.3}Case 3: Stackelberg Competition}{4}{}%
+\contentsline {section}{\numberline {3}Nash Equilibria in Mixed Actions}{5}{}%
+\contentsline {section}{\numberline {4}Incomplete Information Static Games}{5}{}%
+\contentsline {subsection}{\numberline {4.1}Incomplete Information}{5}{}%
+\contentsline {subsection}{\numberline {4.2}Types and strategies}{6}{}%
+\contentsline {subsection}{\numberline {4.3}Dominant and Dominated Strategies}{8}{}%
+\contentsline {subsection}{\numberline {4.4}Beliefs and Bayesian Games}{8}{}%
+\contentsline {subsection}{\numberline {4.5}Bayesian Nash Equilibrium}{10}{}%
+\contentsline {subsection}{\numberline {4.6}Ex-Ante Optimization}{10}{}%
+\contentsline {subsection}{\numberline {4.7}Optimization by `Type' Players}{13}{}%
+\contentsline {subsection}{\numberline {4.8}Application}{14}{}%
+\contentsline {subsubsection}{\numberline {4.8.1}Cournot Competition with Incomplete Information}{14}{}%
+\contentsline {subsubsection}{\numberline {4.8.2}Bertrand with Incomplete Information}{15}{}%
+\contentsline {subsubsection}{\numberline {4.8.3}Auction with Incomplete Information}{16}{}%
