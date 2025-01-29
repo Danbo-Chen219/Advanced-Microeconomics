@@ -4,6 +4,9 @@
 \usepackage{tikz}
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{setspace}
+\renewcommand{\baselinestretch}{1.5}
 \geometry{tmargin=.75in, bmargin=.75in, lmargin=.75in, rmargin = .75in}  
 
 \newcommand{\R}{\mathbb{R}}
@@ -32,7 +35,66 @@
 
 \vspace{.25in}
 
-\section{Static Games2}
+\section{Nash Equilibrium in Pure Actions}
+
+A game is triple (I,(A$_i$), (u$_i$)) where:
+\begin{itemize}
+    \item I is a set of players
+    \item A$_i$ is the set of actions available to player i
+    \item u$_i$ is the payoff function for player i
+\end{itemize}
+
+For the moment, the functions \( u_i \) represent ordinal preferences over \( \prod_{i \in I} A_i \).
+
+Note that we are allowing arbitrary externalities.
+
+Consider a game with \( N \) players. A strategy profile  
+\[
+\mathbf{s^*} = (s_1^*, s_2^*, \dots, s_N^*)
+\]  
+is a \textbf{Nash equilibrium} of the game if, for every player \( i \),
+
+\[
+u_i(s_i^*, \mathbf{s}_{-i}^*) \geq u_i(s_i', \mathbf{s}_{-i}^*)
+\]
+
+Given a game \( (I, (A_i)_{i \in I}, (u_i)_{i \in I}) \), a \underline{Nash equilibrium} of this game is an \( n \)-tuple of actions \( (a^*_i)_{i \in I} \) such that for every player \( i \in I \) and for every action \( a_i \in A_i \):
+
+\[
+u_i(a^*) \geq u_i(a_i, a^*_{-i}),
+\]
+
+where \( (a_i, a^*_{-i}) \) is the list of actions that is identical to \( a^* \) except that we have replaced \( a^*_i \) by \( a_i \).
+
+\underline{\textbf{Interpretation:}} A Nash equilibrium represents a rest point of a learning process in which each player chooses the optimal action assuming that all other players choose the same actions as in the previous period.
+
+\underline{\textbf{Best Response}}: A strategy \( s_i \) is a best response to a strategy profile \( s_{-i} \) if it maximizes the payoff of player i given the strategies of the other players.
+\[
+u_i(s_i, \mathbf{s}_{-i}) \geq u_i(s_i', \mathbf{s}_{-i})
+\]
+
+\underline{\textbf{Best Response Correspondence}}: The best response correspondence of player i is the correspondence that assigns to each strategy profile \( s_{-i} \) the set of best responses of player i to \( s_{-i} \).
+
+\subsection{Key points}
+\underline{\textbf{1. Nash equilibria are fixed points of the best reply correspondence.}}
+
+For every player \( i \in I \) define a \underline{best reply correspondence} \( BR_i : \prod_{i \in I} A_i \rightrightarrows A_i \) by setting for every \( a \in \prod_{i \in I} A_i \):
+
+\[
+BR_i(a) = \{ a_i \in A_i \mid u_i(a_i, a_{-i}) \geq u_i(a'_i, a_{-i}) \text{ for every } a'_i \in A_i \}.
+\]
+
+The \underline{best reply correspondence} \( BR : \prod_{i \in I} A_i \rightrightarrows \prod_{i \in I} A_i \) is defined by setting for every \( a \in \prod_{i \in I} A_i \):
+
+\[
+BR(a) = \prod_{i \in I} BR_i(a).
+\]
+
+By definition: \( a^* \) is a Nash equilibrium if and only if \( a^* \in BR(a^*) \), i.e., if and only if \( a^* \) is a fixed point of \( BR \).
+
+
+
+    \section{Static Games}
 
 \subsection{Case 1: Betrend Competition}
 In betrend competition, firm face a total cost curve for producing their goods and simply choose the price for their respective goods. 
@@ -118,6 +180,9 @@ Naturally, depending on what firm 2's price is, we could have any of these situa
 \subsection{Case 2: Cournet Competition}
 
 \subsection{Case 3: Stackelberg Competition}
+
+\section{Topic 2: Nash Equilibria in Mixed Actions}
+
 % \subsection{Exponential Distribution}
 
 % \subsection{Poisson Distribution}
