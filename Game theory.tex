@@ -899,4 +899,138 @@ s_i(\theta_i) = \beta(\theta_i) = \theta_i - \int_0^{\theta_i} \frac{[F(t)]^{n-1
 
 This is lower than \( \theta_i \). That makes sense because otherwise, the bidder's payoff will be 0 or negative.
 
+\textbf{Exercise: first-price sealed-bid auction}
+
+\noindent
+\textbf{1.} Consider the first-price sealed bid auction (introduced in the lecture) with two bidders, \( i = 1,2 \).
+Each bidder’s valuation is drawn independently from the cumulative distribution \( F(v) \) on \( [0,1] \).
+
+\noindent
+\textbf{(a)} Formulate bidder 1’s maximization problem given that bidder 2 follows the equilibrium bid function, \( \sigma(\cdot) \):
+
+\noindent
+\textbf{Solution:} We assume that this equilibrium bid function is strictly increasing. Given that bidder 2 follows the equilibrium \( \sigma(\cdot) \), bidder 1’s problem is given by
+
+\[
+\max_b (v - b) Pr(b > \sigma(v_2)) = (v - b) F(\sigma^{-1}(b))
+\]
+
+\(\blacksquare\)
+
+\noindent
+\textbf{(b)} Derive the conditions that characterize the symmetric equilibrium (in which both bidders follow the same strategy \( \sigma \)):
+
+\noindent
+\textbf{Solution:} We look for a symmetric equilibrium in which \( \sigma_1 = \sigma_2 = \sigma \). The first-order condition with respect to \( b \):
+
+\[
+- F(\sigma^{-1}(b)) + (v - b) f(\sigma^{-1}(b)) \frac{1}{\sigma'(\sigma^{-1}(b))} \Bigg|_{b = \sigma(v)} = 0
+\]
+
+\[
+- F(v) + (v - \sigma(v)) f(v) \frac{1}{\sigma'(v)} = 0
+\]
+
+It is also easily seen that in equilibrium, \( \sigma(0) = 0 \). So the ODE system is given by
+
+\[
+(1) \quad -F(v) + (v - \sigma(v)) f(v) \frac{1}{\sigma'(v)} = 0
+\]
+
+\[
+(2) \quad \sigma(0) = 0
+\]
+
+The above two conditions characterize the symmetric pure strategy Bayesian Nash Equilibrium (BNE).
+
+\(\blacksquare\)
+
+\noindent
+\textbf{(c)} Solve for the symmetric equilibrium bid function \( \sigma(v) \). 
+
+\noindent
+\textbf{Solution:} \textit{[Remark: if you don’t know how to solve an ODE system derived in (c) above to get the solution, you may use the envelope theorem introduced in the lecture.]}
+
+\textbf{• Method \#1 (ODE)}
+
+From equation (1),
+
+\[
+- F(v) + (v - \sigma(v)) f(v) \frac{1}{\sigma'(v)} = 0
+\]
+
+\[
+\Leftrightarrow f(v) \sigma(v) + F(v) \sigma'(v) = v f(v)
+\]
+
+\[
+\Leftrightarrow \frac{d}{dv} (F(v) \sigma(v)) = \frac{d}{dv} \left(\int_0^v \bar{v} f(\bar{v}) d\bar{v} + C \right)
+\]
+
+\[
+\Leftrightarrow F(v) \sigma(v) = \int_0^v \bar{v} f(\bar{v}) d\bar{v} + C = \bar{v} F(\bar{v}) \Big|_0^v - \int_0^v F(\bar{v}) d\bar{v} + C
+\]
+
+The last equality is followed by the integration by parts.
+
+\[
+\Leftrightarrow F(v) \sigma(v) = v F(v) - \int_0^v F(\bar{v}) d\bar{v} + C
+\]
+
+From equation (2), \( \sigma(0) = 0 \), implying that \( C = 0 \). Thus,
+
+\[
+\sigma(v) = v - \int_0^v \frac{F(\bar{v})}{F(v)} d\bar{v}.
+\]
+
+\textbf{• Method \#2 (Envelope Theorem)}
+
+In equilibrium, the expected payoff for a bidder with valuation \( v \) is \( \Pi(v) = \pi(v, \sigma(v)) \).
+
+Notice that
+
+\[
+\frac{d \Pi(v)}{dv} = \frac{\partial \pi(v, \sigma(v))}{\partial v} + \frac{\partial \pi(v, \sigma(v))}{\partial \sigma} \times \frac{\partial \sigma(v)}{\partial v}.
+\]
+
+By the Envelope Theorem, \( \frac{\partial \pi(v, \sigma(v))}{\partial \sigma} = 0 \).
+
+Consequently,
+
+\[
+\frac{d \Pi(v)}{dv} = F(\sigma^{-1}(\sigma(v))) = F(v).
+\]
+
+Moreover, notice that
+
+\[
+\Pi(v) = (v - \sigma(v)) F(\sigma^{-1}(\sigma(v)))
+\]
+
+\[
+= (v - \sigma(v)) F(v).
+\]
+
+Taking the previous two expressions and substituting them into the identity
+
+\[
+\int_0^v \frac{d \Pi(w)}{dw} dw = \Pi(v) - \Pi(0),
+\]
+
+we obtain
+
+\[
+\int_0^v F(w) dw = (v - \sigma(v)) F(v) - 0.
+\]
+
+Rearranging provides an explicit solution \( \sigma(v) \):
+
+\[
+\sigma(v) = v - \int_0^v \frac{F(w)}{F(v)} dw,
+\]
+
+which is the same as derived in Method \#1.
+
+\(\blacksquare\)
+
 \end{document}

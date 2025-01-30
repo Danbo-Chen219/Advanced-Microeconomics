@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2025.1.27)  29 JAN 2025 18:54
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2025.1.27)  29 JAN 2025 19:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -769,7 +769,7 @@ on the strategy profile $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 s[]; s[]; [] ; s[]\O
 T1/cmr/m/n/12 )$
  []
 
-[17] [18] [19] (Game theory.aux)
+[17] [18] [19] [20] (Game theory.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -784,4 +784,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  84i,11n,93p,747b,1051s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Game theory.pdf (19 pages).
+Output written on Game theory.pdf (20 pages).
