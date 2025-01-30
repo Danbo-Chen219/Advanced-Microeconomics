@@ -4,17 +4,17 @@
 \contentsline {subsection}{\numberline {2.1}Case 1: Betrend Competition}{2}{}%
 \contentsline {subsection}{\numberline {2.2}Case 2: Cournet Competition}{5}{}%
 \contentsline {subsection}{\numberline {2.3}Trembling Hand Perfection}{7}{}%
-\contentsline {section}{\numberline {3}Nash Equilibria in Mixed Actions}{8}{}%
-\contentsline {section}{\numberline {4}Commplete Information Dynamic Games}{8}{}%
-\contentsline {subsection}{\numberline {4.1}Entry Game}{8}{}%
-\contentsline {section}{\numberline {5}Incomplete Information}{8}{}%
-\contentsline {subsection}{\numberline {5.1}Types and strategies}{9}{}%
-\contentsline {subsection}{\numberline {5.2}Dominant and Dominated Strategies}{11}{}%
-\contentsline {subsection}{\numberline {5.3}Beliefs and Bayesian Games}{11}{}%
-\contentsline {subsection}{\numberline {5.4}Bayesian Nash Equilibrium}{13}{}%
-\contentsline {subsection}{\numberline {5.5}Ex-Ante Optimization}{13}{}%
-\contentsline {subsection}{\numberline {5.6}Optimization by `Type' Players}{16}{}%
-\contentsline {subsection}{\numberline {5.7}Application}{17}{}%
-\contentsline {subsubsection}{\numberline {5.7.1}Cournot Competition with Incomplete Information}{17}{}%
-\contentsline {subsubsection}{\numberline {5.7.2}Bertrand with Incomplete Information}{18}{}%
-\contentsline {subsubsection}{\numberline {5.7.3}Auction with Incomplete Information}{19}{}%
+\contentsline {section}{\numberline {3}Nash Equilibria in Mixed Actions}{9}{}%
+\contentsline {section}{\numberline {4}Commplete Information Dynamic Games}{9}{}%
+\contentsline {subsection}{\numberline {4.1}Entry Game}{9}{}%
+\contentsline {section}{\numberline {5}Incomplete Information}{9}{}%
+\contentsline {subsection}{\numberline {5.1}Types and strategies}{10}{}%
+\contentsline {subsection}{\numberline {5.2}Dominant and Dominated Strategies}{12}{}%
+\contentsline {subsection}{\numberline {5.3}Beliefs and Bayesian Games}{12}{}%
+\contentsline {subsection}{\numberline {5.4}Bayesian Nash Equilibrium}{14}{}%
+\contentsline {subsection}{\numberline {5.5}Ex-Ante Optimization}{14}{}%
+\contentsline {subsection}{\numberline {5.6}Optimization by `Type' Players}{17}{}%
+\contentsline {subsection}{\numberline {5.7}Application}{18}{}%
+\contentsline {subsubsection}{\numberline {5.7.1}Cournot Competition with Incomplete Information}{18}{}%
+\contentsline {subsubsection}{\numberline {5.7.2}Bertrand with Incomplete Information}{19}{}%
+\contentsline {subsubsection}{\numberline {5.7.3}Auction with Incomplete Information}{20}{}%

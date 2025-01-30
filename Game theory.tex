@@ -310,7 +310,87 @@ Notice that we just need the equilibrium strategy to be a best response to a seq
 In the example, D and R are weakly dominated strategies. (D,R) is not trembling-hand perfect. This is not a coincidence. We have the following more general result.
 
 \textbf{Definition 14.} If $\sigma = (\sigma_1, \sigma_2, \dots, \sigma_n)$ is a trembling-hand perfect Nash equilibrium, then $\sigma_i$ is not a weakly dominated strategy for any $i = 1,2, \dots, n$.
-\newpage
+
+\textbf{Example: MWG, page 265: Exercise 8.F. 2}
+Consider the following three-player game [taken from van Damme (1983)], in which player 1 chooses rows ($S_1 = \{U,D\}$), player 2 chooses columns ($S_2 = \{L,R\}$), and player 3 chooses boxes ($S_3 = \{B_1,B_2\}$):
+
+\begin{center}
+\textbf{B$_1$}
+\[
+\begin{array}{c|cc}
+    & L & R  \\
+\hline
+U & 1,1,1 & 1,0,1 \\
+D & 1,1,1 & 0,0,1 \\
+\end{array}
+\]
+\hspace{1cm}
+\textbf{B$_2$}
+\[
+\begin{array}{c|cc}
+    & L & R  \\
+\hline
+U & 1,1,0 & 0,0,0 \\
+D & 0,1,0 & 1,0,0 \\
+\end{array}
+\]
+\end{center}
+
+Each cell describes the payoffs to the three players ($u_1, u_2, u_3$) from that strategy combination. Both $(D,L,B_1)$ and $(U,L,B_1)$ are pure strategy Nash equilibria. Show that $(D,L,B_1)$ is not (normal form) trembling-hand perfect even though none of these three strategies is weakly dominated.
+
+\textbf{Solution:}
+
+We define $\delta^t = ((\varepsilon_1, 1 - \varepsilon_1), (1 - \varepsilon_2, \varepsilon_2), (1 - \varepsilon_3, \varepsilon_3))$ which converges to $\delta = (\delta_1, \delta_2, \delta_3) = ((0,1), (1,0), (1,0)) = (D, L, B_1)$ as $t \to \infty$. ($\varepsilon_i \to 0$ as $t \to \infty$ for all $i$.) To show that $(D,L,B_1)$ is not (normal form) trembling-hand perfect, we should have, for some $i$ and $t$,
+
+\begin{equation}
+\pi_i(\delta_i, \delta^t_{-i}) < \pi_i(s_i, \delta^t_{-i}) \quad \text{for some } s_i \in S_i.
+\end{equation}
+
+We are going to compare $\pi_1(\delta_1, \delta^t_{-1}) = \pi_1(D, (1 - \varepsilon_2, \varepsilon_2), (1 - \varepsilon_3, \varepsilon_3))$ and $\pi_1(s_1, \delta^t_{-1}) = \pi_1(U, (1 - \varepsilon_2, \varepsilon_2), (1 - \varepsilon_3, \varepsilon_3))$.
+
+\begin{equation}
+\pi_1(D, (1 - \varepsilon_2, \varepsilon_2), (1 - \varepsilon_3, \varepsilon_3))
+\end{equation}
+\[
+= (1 - \varepsilon_2)(1 - \varepsilon_3) \times 1 + (1 - \varepsilon_2)\varepsilon_3 \times 0 + \varepsilon_2(1 - \varepsilon_3) \times 0 + \varepsilon_2\varepsilon_3 \times 1
+\]
+\[
+= 1 - \varepsilon_2 - \varepsilon_3 + 2\varepsilon_2\varepsilon_3.
+\]
+
+\begin{equation}
+\pi_1(U, (1 - \varepsilon_2, \varepsilon_2), (1 - \varepsilon_3, \varepsilon_3))
+\end{equation}
+\[
+= (1 - \varepsilon_2)(1 - \varepsilon_3) \times 1 + (1 - \varepsilon_2)\varepsilon_3 \times 1 + \varepsilon_2(1 - \varepsilon_3) \times 1 + \varepsilon_2\varepsilon_3 \times 0
+\]
+\[
+= 1 - \varepsilon_2\varepsilon_3.
+\]
+
+\begin{equation}
+\pi_1(U, (1 - \varepsilon_2, \varepsilon_2), (1 - \varepsilon_3, \varepsilon_3)) - \pi_1(D, (1 - \varepsilon_2, \varepsilon_2), (1 - \varepsilon_3, \varepsilon_3))
+\end{equation}
+\[
+= (1 - \varepsilon_2\varepsilon_3) - (1 - \varepsilon_2 - \varepsilon_3 + 2\varepsilon_2\varepsilon_3)
+\]
+\[
+= \varepsilon_2 + \varepsilon_3 - \varepsilon_2\varepsilon_3 = \varepsilon_2\varepsilon_3 \left(\frac{1}{\varepsilon_3} + \frac{1}{\varepsilon_2} - 1\right).
+\]
+
+If $t$ is sufficiently high, or in other words if $\varepsilon_i$'s are sufficiently small, (6) is positive.
+\[
+\left(\frac{1}{\varepsilon_3} + \frac{1}{\varepsilon_2} - 1\right) > 0
+\]
+
+Hence,
+
+\begin{equation}
+\pi_1(\delta_1, \delta^t_{-1}) = \pi_1(D, (1 - \varepsilon_2, \varepsilon_2), (1 - \varepsilon_3, \varepsilon_3)) < \pi_1(s_1, \delta^t_{-1}) = \pi_1(U, (1 - \varepsilon_2, \varepsilon_2), (1 - \varepsilon_3, \varepsilon_3)).
+\end{equation}
+
+Therefore, we conclude that $(D, L, B_1)$ is not (normal form) trembling-hand perfect.
+
 \section{Nash Equilibria in Mixed Actions}
 \section{Commplete Information Dynamic Games}
 \subsection{Entry Game}
