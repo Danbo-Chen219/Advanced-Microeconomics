@@ -280,7 +280,36 @@ The equilibrium price is
 p(q) = \frac{a + 2c}{3}
 \]
 
-\subsection{Case 3: Stackelberg Competition}
+\subsection{Trembling Hand Perfection}
+
+\textbf{Definition 13.} A Nash equilibrium $\sigma$ of game $\Gamma_N = [I, \{\Delta(S_i)\}, \{u_i(\cdot)\}]$ is a trembling-hand perfect if and only if there is some sequence of totally mixed strategies $\{\sigma^k\}_{k=1}^{\infty}$ such that $\lim_{k \to \infty} \sigma^k = \sigma$ and $\sigma_i$ is a best response to every element of sequence $\{\sigma_{-i}^k\}_{k=1}^{\infty}$ for all $i = 1,2, \dots, I$.
+
+Totally mixed strategy means a strategy that assigns positive probabilities to each action. We will see a similar idea in lecture 6.
+
+\textbf{Example}
+Let's find all pure-strategy trembling-hand perfect Nash equilibrium of the following game.
+
+\begin{center}
+\begin{tabular}{c|cc}
+ & \textbf{Player 2} & \\
+\textbf{Player 1} & L & R \\
+\hline
+U & 1,1 & 0,-3 \\
+D & -3,0 & 0,0 \\
+\end{tabular}
+\end{center}
+
+There are two pure-strategy Nash equilibria: (U,L) and (D,R).
+
+First, we show that (D,R) is not trembling-hand perfect. Consider $\{\sigma^k\}_{k=1}^{\infty}$ such that player 1 chooses U with probability $p^k \in (0,1)$ and chooses D with probability $1 - p^k$, and player 2 choose L with probability $q^k$ and choose R with probability $1 - q^k$, where $q^k \in (0,1)$. Then payoff of player 1 from action U is $q^k > 0$. The payoff of player 1 from action D is $-3q^k < 0$. Therefore, D is not a best response to any totally mixed strategy of player 2, making (D,R) not a trembling-hand perfect Nash equilibrium.
+
+Next, we show that (U,L) is trembling-hand perfect. Based on the discussion above, U is a best response to any totally mixed strategies of player 2. One can similarly see that L is a best response to any totally mixed strategies of player 1, making (U,L) a trembling-hand perfect Nash equilibrium.
+
+Notice that we just need the equilibrium strategy to be a best response to a sequence, not all possible sequences. That means, as long as for some form of mistakes, the equilibrium strategy is the best, the equilibrium is trembling hand perfect.
+
+In the example, D and R are weakly dominated strategies. (D,R) is not trembling-hand perfect. This is not a coincidence. We have the following more general result.
+
+\textbf{Definition 14.} If $\sigma = (\sigma_1, \sigma_2, \dots, \sigma_n)$ is a trembling-hand perfect Nash equilibrium, then $\sigma_i$ is not a weakly dominated strategy for any $i = 1,2, \dots, n$.
 \newpage
 \section{Nash Equilibria in Mixed Actions}
 \section{Commplete Information Dynamic Games}

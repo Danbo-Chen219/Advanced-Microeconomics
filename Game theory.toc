@@ -3,7 +3,7 @@
 \contentsline {section}{\numberline {2}Static Games}{2}{}%
 \contentsline {subsection}{\numberline {2.1}Case 1: Betrend Competition}{2}{}%
 \contentsline {subsection}{\numberline {2.2}Case 2: Cournet Competition}{5}{}%
-\contentsline {subsection}{\numberline {2.3}Case 3: Stackelberg Competition}{7}{}%
+\contentsline {subsection}{\numberline {2.3}Trembling Hand Perfection}{7}{}%
 \contentsline {section}{\numberline {3}Nash Equilibria in Mixed Actions}{8}{}%
 \contentsline {section}{\numberline {4}Commplete Information Dynamic Games}{8}{}%
 \contentsline {subsection}{\numberline {4.1}Entry Game}{8}{}%
