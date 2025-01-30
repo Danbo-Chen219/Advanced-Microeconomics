@@ -176,7 +176,7 @@ Naturally, depending on what firm 2's price is, we could have any of these situa
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.8\textwidth]{Figure/Betrend.png} % 图片文件路径
+    \includegraphics[width=0.8\textwidth]{Figure/Betrend.png}
     \caption{EQ} 
     \label{fig:1} 
 \end{figure}
@@ -189,6 +189,38 @@ Naturally, depending on what firm 2's price is, we could have any of these situa
 \section{Commplete Information Dynamic Games}
 \subsection{Entry Game}
 A firm called Firm E is considering entering a market that currently has a single incumbent Firm I. If it chooses “in”, the incumbent can respond in one of the two ways: It can either accomodate the entrant, of fight the entrant. We use the following tree to represent the whole process.
+
+\begin{tikzpicture}[
+    scale=1, 
+    every node/.style={scale=1},
+    grow=right, 
+    sibling distance=5cm, 
+    level distance=3cm,
+    edge from parent path={(\tikzparentnode.east) -- (\tikzchildnode.west)}
+]
+
+\node[circle,draw] {} 
+    child { node {Firm E}
+        child { node {Out} 
+            child { node {$(0,2)$} edge from parent[draw=none]}
+            edge from parent node[above] {Out} 
+        }
+        child { node[circle,fill,inner sep=2pt] {} 
+            child { node {Fight}
+                child { node {$(-3,-1)$} edge from parent[draw=none]}
+                edge from parent node[above] {Fight} 
+            }
+            child { node {Accomodate}
+                child { node {$(2,1)$} edge from parent[draw=none]}
+                edge from parent node[above] {Accomodate} 
+            }
+            edge from parent node[above] {In} 
+            node[right=2mm] {Firm I}
+        }
+    };
+
+\end{tikzpicture}
+
 
 \section{Incomplete Information}
 A game has (is of) incomplete information when at least one player does not know the payoff that some player receives from some strategy profile (or terminal nodes).

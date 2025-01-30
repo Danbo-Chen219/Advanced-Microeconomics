@@ -7,14 +7,14 @@
 \contentsline {section}{\numberline {3}Nash Equilibria in Mixed Actions}{5}{}%
 \contentsline {section}{\numberline {4}Commplete Information Dynamic Games}{5}{}%
 \contentsline {subsection}{\numberline {4.1}Entry Game}{5}{}%
-\contentsline {section}{\numberline {5}Incomplete Information}{5}{}%
-\contentsline {subsection}{\numberline {5.1}Types and strategies}{6}{}%
+\contentsline {section}{\numberline {5}Incomplete Information}{6}{}%
+\contentsline {subsection}{\numberline {5.1}Types and strategies}{7}{}%
 \contentsline {subsection}{\numberline {5.2}Dominant and Dominated Strategies}{8}{}%
-\contentsline {subsection}{\numberline {5.3}Beliefs and Bayesian Games}{8}{}%
-\contentsline {subsection}{\numberline {5.4}Bayesian Nash Equilibrium}{10}{}%
-\contentsline {subsection}{\numberline {5.5}Ex-Ante Optimization}{10}{}%
-\contentsline {subsection}{\numberline {5.6}Optimization by `Type' Players}{13}{}%
-\contentsline {subsection}{\numberline {5.7}Application}{14}{}%
-\contentsline {subsubsection}{\numberline {5.7.1}Cournot Competition with Incomplete Information}{14}{}%
+\contentsline {subsection}{\numberline {5.3}Beliefs and Bayesian Games}{9}{}%
+\contentsline {subsection}{\numberline {5.4}Bayesian Nash Equilibrium}{11}{}%
+\contentsline {subsection}{\numberline {5.5}Ex-Ante Optimization}{11}{}%
+\contentsline {subsection}{\numberline {5.6}Optimization by `Type' Players}{14}{}%
+\contentsline {subsection}{\numberline {5.7}Application}{15}{}%
+\contentsline {subsubsection}{\numberline {5.7.1}Cournot Competition with Incomplete Information}{15}{}%
 \contentsline {subsubsection}{\numberline {5.7.2}Bertrand with Incomplete Information}{15}{}%
-\contentsline {subsubsection}{\numberline {5.7.3}Auction with Incomplete Information}{16}{}%
+\contentsline {subsubsection}{\numberline {5.7.3}Auction with Incomplete Information}{17}{}%
