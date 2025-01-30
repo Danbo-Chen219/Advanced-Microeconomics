@@ -180,8 +180,105 @@ Naturally, depending on what firm 2's price is, we could have any of these situa
     \caption{EQ} 
     \label{fig:1} 
 \end{figure}
-
+\break
 \subsection{Case 2: Cournet Competition}
+
+Now back to the last example in the previous lecture. Suppose the market has two oligopolists. The market
+has the same inverse demand function as before: with \( a, b > 0 \),
+
+\[
+p(q) =
+\begin{cases}
+a - bq & \text{if } q < \frac{a}{b} \\
+0 & \text{if } q \geq \frac{a}{b}
+\end{cases}
+\]
+
+Here, \( q = q_1 + q_2 \), where \( q_1 \) and \( q_2 \) are the quantities chosen by the oligopolists respectively. They choose their quantity without knowing their opponent’s choice. They produce goods with the same constant marginal cost \( c \in [0,a] \). And both of them maximize their profit, i.e., the first monopolist solves:
+
+\[
+\max_{q_1 \geq 0} p(q_1 + q_2) q_1 - c q_1
+\]
+
+and the second monopolist solves:
+
+\[
+\max_{q_2 \geq 0} p(q_1 + q_2) q_2 - c q_2
+\]
+
+To find the Nash equilibrium, let’s first solve for the best response of each firm. Firm 1’s best response can be obtained by solving
+
+\[
+\max_{q_1 \geq 0} p(q_1 + q_2) q_1 - c q_1
+\]
+
+If \( q_2 \geq \frac{a}{b} \), then \( p(q) = 0 \). In this case, it is optimal for Firm 1 to choose \( q_1 = 0 \).
+
+Now consider \( q_2 < \frac{a}{b} \). If Firm 1 chooses \( q_1 \geq \frac{a}{b} - q_2 \), then firm 1’s payoff is negative. Now consider firm 1 chooses \( q_1 \in [0, \frac{a}{b} - q_2] \). Firm 1 solves the following problem.
+
+\[
+\max_{q_1 \in [0, \frac{a}{b} - q_2]} (a - b q_1 - b q_2) q_1 - c q_1
+\]
+
+The first order derivative with respect to \( q_1 \) is given by
+
+\[
+a - c - b q_2 - 2 b q_1
+\]
+
+This is positive when \( q_1 < \frac{a - c - bq_2}{2b} \) and is negative when \( q_1 > \frac{a - c - bq_2}{2b} \). If \( \frac{a - c - bq_2}{2b} \leq 0 \), it is optimal for Player 1 to choose \( q_1 = 0 \). If \( \frac{a - c - bq_2}{2b} > 0 \), it is optimal for Player 1 to choose \( \frac{a - c - bq_2}{2b} \), which yields a positive payoff.
+
+Summarizing the above, Player 1’s best response is given by the following:
+
+\[
+b_1(q_2) =
+\begin{cases}
+    \{0\} & \text{if } q_2 \geq \frac{a - c}{b} \\
+    \left\{ \frac{a - c - bq_2}{2b} \right\} & \text{if } q_2 < \frac{a - c}{b}
+\end{cases}
+\]
+
+Symmetrically, Player 2’s best response is given by the following:
+
+\[
+b_2(q_1) =
+\begin{cases}
+    \{0\} & \text{if } q_1 \geq \frac{a - c}{b} \\
+    \left\{ \frac{a - c - bq_1}{2b} \right\} & \text{if } q_1 < \frac{a - c}{b}
+\end{cases}
+\]
+
+We similarly use figures to find the Nash equilibrium.
+\begin{center}
+\includegraphics{Figure/Cournet.jpg}
+\end{center}
+The best response correspondences cross once where
+
+\[
+q_1 = \frac{a - c - bq_2}{2b}
+\]
+
+\[
+q_2 = \frac{a - c - bq_1}{2b}
+\]
+
+Solving the above equations, we have
+
+\[
+q_1 = q_2 = \frac{a - c}{3b}
+\]
+
+The total market output is
+
+\[
+q = q_1 + q_2 = \frac{2(a - c)}{3b}
+\]
+
+The equilibrium price is
+
+\[
+p(q) = \frac{a + 2c}{3}
+\]
 
 \subsection{Case 3: Stackelberg Competition}
 \newpage
